@@ -109,25 +109,23 @@ fn DynamicList(
           // `children` receives each item from your `each` iterator
           // and returns a view
           children=move |(id, (count, set_count))| {
-              view! {
-                <li>
-                  <button on:click=move |_| set_count.update(|n| *n += 1)>{count}</button>
-                  <button on:click=move |_| {
-                      set_counters
-                          .update(|counters| {
-                              counters
-                                  .retain(|(counter_id, (signal, _))| {
-                                      if counter_id == &id {
-                                          signal.dispose();
-                                      }
-                                      counter_id != &id
-                                  })
-                          });
-                  }>
-                    "Remove"
-                  </button>
-                </li>
-              }
+            view! {
+              <li>
+                <button on:click=move |_| set_count.update(|n| *n += 1)>{count}</button>
+                <button on:click=move |_| {
+                  set_counters
+                    .update(|counters| {
+                    counters
+                    .retain(|(counter_id, (signal, _))| {
+                      if counter_id == &id {
+                        signal.dispose();
+                      }
+                      counter_id != &id
+                    })
+                  });
+                }>"Remove"</button>
+              </li>
+            }
           }
         />
       </ul>

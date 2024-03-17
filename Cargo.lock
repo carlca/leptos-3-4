@@ -606,7 +606,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "leptos-3-1"
+name = "leptos-3-4"
 version = "0.1.0"
 dependencies = [
  "console_error_panic_hook",
