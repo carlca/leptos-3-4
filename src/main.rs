@@ -124,14 +124,12 @@ fn DynamicList(
                                   })
                           });
                   }>
-
                     "Remove"
                   </button>
                 </li>
               }
           }
         />
-
       </ul>
     </div>
   }
